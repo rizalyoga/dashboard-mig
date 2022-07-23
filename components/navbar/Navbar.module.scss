@@ -1,0 +1,58 @@
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  width: 95%;
+
+  .navbar__left_content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .root_page {
+      font-weight: 500;
+      color: rgb(163, 163, 163);
+    }
+
+    .arrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgb(163, 163, 163);
+    }
+
+    .sub_page {
+      font-weight: bold;
+      color: rgb(83, 83, 83);
+    }
+  }
+  .navbar__right_content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .activity_container {
+      .icon {
+        margin: 0 10px;
+        font-size: 1.2rem;
+        color: rgb(83, 83, 83);
+        cursor: pointer;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+
+    .user_profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .user_profile_image {
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}

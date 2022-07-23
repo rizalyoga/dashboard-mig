@@ -1,0 +1,30 @@
+.box__company_activity_container {
+  background: #fff;
+  border-radius: 4px;
+
+  box-shadow: 0px 1px 6px 1px rgba(125, 125, 125, 0.75);
+  -webkit-box-shadow: 0px 1px 6px 1px rgba(125, 125, 125, 0.75);
+  -moz-box-shadow: 0px 1px 6px 1px rgba(125, 125, 125, 0.75);
+
+  .company__activity_inner_container {
+    padding: 5px 20px;
+
+    .activty__header {
+      h4 {
+        color: rgb(83, 83, 83);
+      }
+    }
+    .activity__card_container {
+      .card__activity {
+        font-size: 0.9rem;
+        color: rgb(83, 83, 83);
+        line-height: 1.4rem;
+      }
+
+      .card__time_activity {
+        font-size: 0.7rem;
+        color: rgb(163, 163, 163);
+      }
+    }
+  }
+}
