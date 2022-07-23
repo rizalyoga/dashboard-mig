@@ -35,12 +35,43 @@
     display: flex;
 
     .left_content {
-      width: 25%;
+      width: 40%;
     }
 
     .right_content {
-      width: 72%;
+      width: 75%;
+
+      .right_bottom_content {
+        flex-direction: column;
+        width: 100%;
+
+        .buttom_left {
+          width: 100%;
+        }
+
+        .buttom_right {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .content_container {
+    flex-direction: column;
+    margin-left: -30px;
+
+    .left_content {
+      width: 100%;
       margin-left: 30px;
+      padding-right: 10px;
+    }
+
+    .right_content {
+      width: 100%;
+      padding-right: 10px;
 
       .right_bottom_content {
         flex-direction: column;

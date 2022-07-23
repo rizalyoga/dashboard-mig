@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   background: #fff;
+  z-index: 20;
 
   .sidebar__logo_container {
     padding: 0.7rem;
@@ -37,5 +38,12 @@
         background: #f1f7f2;
       }
     }
+  }
+}
+
+@media (max-width: 430px) {
+  .sidebar__icons {
+    font-size: 3rem;
+    color: rebeccapurple;
   }
 }

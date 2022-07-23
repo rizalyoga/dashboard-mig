@@ -83,3 +83,17 @@
     }
   }
 }
+
+@media (max-width: 770px) {
+  .box__company__location_container {
+    .company__location_content {
+      flex-direction: column;
+      padding-bottom: 10px;
+
+      .company__location_card {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
