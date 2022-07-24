@@ -1,0 +1,43 @@
+.customers__container {
+  margin-left: 30px;
+  width: 95%;
+  // for 430px
+  //   padding-right: 20px;
+
+  .customers__inner_container {
+    h1 {
+      color: rgb(83, 83, 83);
+    }
+
+    .tables__container {
+      .tables__action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .tables__search_feature {
+          input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 2px;
+            outline: none;
+            border: 1px solid rgba(83, 83, 83, 0.767);
+          }
+        }
+        .tables__filter_feature {
+          select {
+            border: 1px solid rgba(83, 83, 83, 0.767);
+            padding: 9px 15px;
+            outline: none;
+            border-radius: 2px;
+            background: #fff;
+          }
+        }
+      }
+
+      .tables__table_container {
+        margin: 30px 0;
+      }
+    }
+  }
+}

@@ -25,6 +25,11 @@
     gap: 10px;
     width: 100%;
 
+    .active {
+      background: #f1f7f2;
+      border-left: 3px solid #24b11a;
+    }
+
     .sidebar__icons {
       width: 100%;
       font-size: 2rem;

@@ -25,8 +25,8 @@ const CompanyProfile = () => {
             <Image
               src="/asset/MIG-logo.webp"
               alt="cover-company"
-              height={100}
-              width={100}
+              height={80}
+              width={80}
               className={styles.company__photo}
             />
           </div>

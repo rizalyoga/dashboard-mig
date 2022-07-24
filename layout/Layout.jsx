@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Layout.module.scss";
 import Head from "next/head";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 // Component
 import Sidebar from "@/components/sidebar/Sidebar";
 import Navbar from "@/components/navbar/Navbar";
 
 const Layout = ({ children }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = Cookies.get("userAuth");
+    if (!token) {
+      router.push("/login");
+    }
+  }, []);
+
   return (
     <>
       <Head>

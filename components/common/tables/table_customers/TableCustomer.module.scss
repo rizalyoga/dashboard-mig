@@ -1,0 +1,48 @@
+.action {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  .action_edit {
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(71, 130, 240);
+
+    &:hover {
+      color: rgb(0, 89, 255);
+      font-weight: bold;
+    }
+  }
+
+  .action_delete {
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(252, 65, 90);
+
+    &:hover {
+      color: rgb(255, 0, 34);
+      font-weight: bold;
+    }
+  }
+}
+
+.country {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgb(83, 83, 83);
+  margin-top: -10px;
+}
+
+.active {
+  background: rgb(63, 233, 41);
+  color: #fff;
+  border-radius: 20px;
+  padding: 2px 0;
+}
+
+.non_active {
+  background: rgb(255, 29, 59);
+  color: #fff;
+  border-radius: 20px;
+  padding: 2px 0;
+}

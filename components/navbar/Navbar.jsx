@@ -1,12 +1,23 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 // Icons
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoIosNotificationsOutline } from "react-icons/io";
 
 const Navbar = () => {
+  const router = useRouter();
+
+  const getPath = () => {
+    if (router.route == "/customers") {
+      return "Customers";
+    } else {
+      return "Mitramas Infosys Global";
+    }
+  };
+
   return (
     <div className={styles.navbar__container}>
       <div className={styles.navbar__left_content}>
@@ -15,7 +26,7 @@ const Navbar = () => {
         </div>
         <p className={styles.arrow}>&gt;</p>
         <div className={styles.sub_page}>
-          <p>Mitramas Infosys Global </p>
+          <p>{getPath()}</p>
         </div>
       </div>
       <div className={styles.navbar__right_content}>
