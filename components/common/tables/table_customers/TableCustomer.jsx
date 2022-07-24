@@ -54,6 +54,7 @@ const TableCustomer = ({ search, filter, dataCustomers }) => {
           <TableBody>
             {dataCustomers
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              .sort((a, b) => a.name.localeCompare(b.name))
               .map((customer, idx) => {
                 return (
                   <TableRow

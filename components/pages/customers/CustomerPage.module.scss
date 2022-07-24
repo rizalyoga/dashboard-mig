@@ -1,8 +1,6 @@
 .customers__container {
   margin-left: 30px;
   width: 95%;
-  // for 430px
-  //   padding-right: 20px;
 
   .customers__inner_container {
     h1 {
@@ -16,6 +14,25 @@
         align-items: center;
 
         .tables__search_feature {
+          display: flex;
+          align-items: center;
+
+          p {
+            background: #3fe929;
+            cursor: pointer;
+            color: #fff;
+            padding: 4px 4px;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            text-align: center;
+            margin: 0 4px;
+            transition: 0.2s;
+
+            &:hover {
+              background: green;
+            }
+          }
+
           input {
             width: 100%;
             padding: 10px 15px;
@@ -39,5 +56,12 @@
         margin: 30px 0;
       }
     }
+  }
+}
+
+@media (max-width: 945px) {
+  .customers__container {
+    // for 430px
+    padding-right: 20px;
   }
 }

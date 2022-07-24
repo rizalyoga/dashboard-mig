@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CustomerPage.module.scss";
+import { useRouter } from "next/router";
 
 // Component
 import Layout from "@/layout/Layout";
@@ -9,6 +10,8 @@ const CustomerPage = ({ dataCustomers }) => {
   const [search, setSearch] = useState("");
   const [datasCustomer, setDatasCustomer] = useState(dataCustomers);
   const [filter, setFilter] = useState("all");
+
+  const router = useRouter();
 
   // Filter function
   useEffect(() => {
@@ -41,6 +44,10 @@ const CustomerPage = ({ dataCustomers }) => {
     }
   }, [search, filter, dataCustomers]);
 
+  const toAddPage = () => {
+    router.push("/customers/add");
+  };
+
   return (
     <Layout>
       <div className={styles.customers__container}>
@@ -56,6 +63,7 @@ const CustomerPage = ({ dataCustomers }) => {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search by name"
                 />
+                <p onClick={toAddPage}>Tambah Customer</p>
               </div>
               <div className={styles.tables__filter_feature}>
                 <select

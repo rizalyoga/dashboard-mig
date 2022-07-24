@@ -1,0 +1,110 @@
+.add_customer__form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: -30px;
+
+  h1 {
+    color: rgb(83, 83, 83);
+  }
+
+  form {
+    width: 50%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 2px;
+    font-size: 0.9rem;
+
+    box-shadow: 0px 1px 6px 1px rgba(125, 125, 125, 0.75);
+    -webkit-box-shadow: 0px 1px 6px 1px rgba(125, 125, 125, 0.75);
+    -moz-box-shadow: 0px 1px 6px 1px rgba(125, 125, 125, 0.75);
+
+    .form_name,
+    .form_phone,
+    .form_country,
+    .form_adress,
+    .form_job,
+    .form_status {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      color: rgb(83, 83, 83);
+      gap: 4px;
+
+      input,
+      select {
+        padding: 10px;
+        border-radius: 2px;
+        border: 1px solid rgb(83, 83, 83);
+
+        &:focus {
+          outline: 1px solid rgba(160, 160, 240, 0.74);
+          border: 1px solid rgb(84, 134, 201);
+        }
+      }
+    }
+
+    .form_contact_country {
+      display: flex;
+      gap: 4px;
+
+      .form_phone,
+      .form_country {
+        flex-basis: 50%;
+      }
+    }
+
+    .form_action {
+      input {
+        background: rgb(113, 113, 255);
+        padding: 10px 10px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        left: 0;
+        transition: 0.2s ease-in;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: rgb(48, 196, 60);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 885px) {
+  .add_customer__form_container {
+    form {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .add_customer__form_container {
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 515px) {
+  .add_customer__form_container {
+    form {
+      width: 100%;
+
+      .form_contact_country {
+        gap: 0;
+        flex-wrap: wrap;
+
+        .form_phone,
+        .form_country {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+}

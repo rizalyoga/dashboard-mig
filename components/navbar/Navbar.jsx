@@ -13,6 +13,8 @@ const Navbar = () => {
   const getPath = () => {
     if (router.route == "/customers") {
       return "Customers";
+    } else if ("/customers/add") {
+      return "Tambah Customer";
     } else {
       return "Mitramas Infosys Global";
     }
