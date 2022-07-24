@@ -14,8 +14,7 @@ export const loginAccount = async (payload) => {
     const data = await response.json();
 
     if (data.access_token) {
-      const timestamp = new Date().getTime(); // current time
-      const exp = timestamp + 60 * 60 * 24 * 1000 * 7;
+      const exp = new Date(new Date().getTime() + 60 * 60 * 24 * 1000); //1day / 24 jam
 
       const authentication = true;
 
