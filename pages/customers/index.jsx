@@ -1,5 +1,4 @@
 import React from "react";
-import { GetServerSideProps } from "next";
 
 // Component
 import CustomerPage from "@/components/pages/customers/CustomerPage";

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TableCustomer.module.scss";
 import { columns } from "./headerTable";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+import Swal from "sweetalert2";
+
+// API
+import { deleteCustomer } from "@/utils/api/customers";
 
 // MaterialUI
 import Paper from "@mui/material/Paper";
@@ -12,10 +18,13 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
-const TableCustomer = ({ search, filter, dataCustomers }) => {
+const TableCustomer = ({ search, dataCustomers }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
+  const router = useRouter();
+
+  // Set table page & total-list
   useEffect(() => {
     if (search.length > 0) {
       setPage(0);
@@ -25,6 +34,7 @@ const TableCustomer = ({ search, filter, dataCustomers }) => {
     }
   }, [search]);
 
+  // Set Pagination Function
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -32,6 +42,37 @@ const TableCustomer = ({ search, filter, dataCustomers }) => {
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
+  };
+
+  // Move to Edit page
+  const toEditPage = (id) => {
+    router.push(`/customers/edit/${id}`);
+  };
+
+  // Delete Customer
+  const delCustomer = (id) => {
+    Swal.fire({
+      text: "Are you sure to Delete ?",
+      color: "rgb(83,83,83)",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#e61b47",
+      confirmButtonText: "Delete",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const token = Cookies.get("userAuth");
+        const payload = {
+          id: id,
+        };
+
+        deleteCustomer(payload, token).then((res) => {
+          Swal.fire({
+            icon: res.success ? "success" : "error",
+            text: `${res.message}`,
+          });
+        });
+      }
+    });
   };
 
   return (
@@ -82,8 +123,18 @@ const TableCustomer = ({ search, filter, dataCustomers }) => {
                     </TableCell>
                     <TableCell align={"center"}>
                       <div className={styles.action}>
-                        <p className={styles.action_edit}>Edit</p>
-                        <p className={styles.action_delete}>Delete</p>
+                        <p
+                          className={styles.action_edit}
+                          onClick={() => toEditPage(customer.id)}
+                        >
+                          Edit
+                        </p>
+                        <p
+                          className={styles.action_delete}
+                          onClick={() => delCustomer(customer.id)}
+                        >
+                          Delete
+                        </p>
                       </div>
                     </TableCell>
                   </TableRow>

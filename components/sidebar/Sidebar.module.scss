@@ -28,11 +28,12 @@
     .active {
       background: #f1f7f2;
       border-left: 3px solid #24b11a;
+      color: #000 !important;
     }
 
     .sidebar__icons {
       width: 100%;
-      font-size: 2rem;
+      font-size: 30px;
       cursor: pointer;
       color: rgb(116, 116, 116);
       transition: 0.2s;

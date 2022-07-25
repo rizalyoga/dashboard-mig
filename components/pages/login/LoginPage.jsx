@@ -47,7 +47,7 @@ const LoginPage = () => {
       <div className={styles.login__form_container}>
         <form onSubmit={onLogin}>
           <div className={styles.form_email}>
-            <label>Email: akun8@mig.id</label>
+            <label>Email : akun8@mig.id</label>
             <input
               type="email"
               value={email}
@@ -57,7 +57,7 @@ const LoginPage = () => {
             />
           </div>
           <div className={styles.form_password}>
-            <label>Password: B71D0BDA</label>
+            <label>Password : B71D0BDA</label>
             <input
               type="password"
               value={password}
@@ -67,7 +67,7 @@ const LoginPage = () => {
             />
           </div>
           <div className={styles.login_button}>
-            <input type="submit" value={loading ? "loading" : "Login"} />
+            <input type="submit" value={loading ? "loading..." : "Login"} />
             <p className={styles.error}>{error}</p>
           </div>
         </form>

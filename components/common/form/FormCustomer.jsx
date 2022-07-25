@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./FormCustomer.module.scss";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 //Api
-import { addCustomer } from "@/utils/api/customers";
+import { addCustomer, editCustomer } from "@/utils/api/customers";
 
-const FormCustomer = () => {
+// Component
+import Loading from "../loding/Loading";
+
+const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [country, setCountry] = useState("");
@@ -15,10 +19,23 @@ const FormCustomer = () => {
   const [status, setStatus] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
+  useEffect(() => {
+    if (dataCustomer) {
+      setName(dataCustomer.name);
+      setPhone(dataCustomer.phone_number);
+      setCountry(dataCustomer.country);
+      setAddress(dataCustomer.address);
+      setJob(dataCustomer.job_title);
+      setStatus(dataCustomer.status);
+    }
+  }, [dataCustomer]);
+
+  // Submit Handler
   const onSubmit = (e) => {
     e.preventDefault();
     const token = Cookies.get("userAuth");
-
     setLoading((load) => !load);
 
     const data = {
@@ -30,18 +47,37 @@ const FormCustomer = () => {
       status: status,
     };
 
-    addCustomer(data, token).then((res) => {
-      Swal.fire({
-        icon: "success",
-        text: `${res.message}`,
+    if (router.route == "/customers/add") {
+      // add customer
+      addCustomer(data, token).then((res) => {
+        Swal.fire({
+          icon: res.success ? "success" : "error",
+          text: `${res.message}`,
+        });
+        setLoading((load) => !load);
       });
-      setLoading((load) => !load);
-    });
+    } else {
+      // edit customer
+      const id = router.query;
+
+      editCustomer(id, data, token).then((res) => {
+        Swal.fire({
+          icon: res.success ? "success" : "error",
+          text: `${res.message}`,
+        });
+        setLoading((load) => !load);
+      });
+    }
   };
+
+  // Loading Data from parent
+  if (loadingData) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.add_customer__form_container}>
-      <h1>Tambah Customer</h1>
+      <h1>{title} Customer</h1>
       <form onSubmit={onSubmit}>
         <div className={styles.form_name}>
           <label>Name</label>
@@ -105,7 +141,7 @@ const FormCustomer = () => {
         <div className={styles.form_action}>
           <input
             type="submit"
-            value={loading ? "Please wait..." : "Add Customer"}
+            value={loading ? "Please wait..." : `${titleBtn} Customer`}
           />
         </div>
       </form>

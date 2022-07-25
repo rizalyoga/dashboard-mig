@@ -9,7 +9,7 @@ const AddCustomer = () => {
   return (
     <Layout>
       <div className={styles.add_customer__container}>
-        <FormCustomer />
+        <FormCustomer title={"Tambah"} titleBtn={"Add"} />
       </div>
     </Layout>
   );
