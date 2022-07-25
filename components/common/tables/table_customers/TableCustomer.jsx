@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TableCustomer.module.scss";
-import { columns } from "./headerTable";
+import { columns } from "@/utils/data/headerTable";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
@@ -86,7 +86,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth, fontWeight: "bolder" }}
                 >
                   {column.label}
                 </TableCell>

@@ -106,6 +106,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Phone Number"
+              maxLength={17}
               required
             />
           </div>

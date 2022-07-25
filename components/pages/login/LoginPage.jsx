@@ -34,7 +34,6 @@ const LoginPage = () => {
       if (res === true) {
         router.push("/");
       } else {
-        console.log(res);
         setError(`Error : ${res}`);
       }
 

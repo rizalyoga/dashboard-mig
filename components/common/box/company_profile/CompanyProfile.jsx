@@ -7,6 +7,9 @@ import { MdOutlineModeEditOutline, MdOutlineEmail } from "react-icons/md";
 import { IoIosGlobe } from "react-icons/io";
 import { TbPhone } from "react-icons/tb";
 
+// Data
+import { profilePerusahaan as profile } from "@/utils/data/profilePerusahaan";
+
 const CompanyProfile = () => {
   return (
     <div className={styles.box__company_profile_container}>
@@ -34,10 +37,10 @@ const CompanyProfile = () => {
       </div>
       <div className={styles.company__names_container}>
         <div className={styles.company__name}>
-          <h4>Mitramas Infosys Global</h4>
+          <h4>{profile.nama}</h4>
         </div>
         <div className={styles.company__major_name}>
-          <p>Layanan IT</p>
+          <p>{profile.layanan}</p>
           <p className={styles.edit_major}>
             <MdOutlineModeEditOutline /> Sunting Profile
           </p>
@@ -46,42 +49,40 @@ const CompanyProfile = () => {
       <div className={styles.company__desc_container}>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>Status Perusahaan</p>
-          <p className={styles.desc_value}>Aktif</p>
+          <p className={styles.desc_value}>{profile.status}</p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>Singkatan</p>
-          <p className={styles.desc_value}>MIG</p>
+          <p className={styles.desc_value}>{profile.singkatan}</p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>Alamat Perusahaan</p>
-          <p className={styles.desc_value}>
-            Jl.Tebet Raya No.42, Jakarta Selatan
-          </p>
+          <p className={styles.desc_value}>{profile.alamat}</p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>Penanggun Jawab (PIC)</p>
-          <p className={styles.desc_value}>John Doe</p>
+          <p className={styles.desc_value}>{profile.pic}</p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>Tanggal PKP</p>
-          <p className={styles.desc_value}>03 Maret 2021</p>
+          <p className={styles.desc_value}>{profile.tanggal_pkp}</p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>E-mail</p>
           <p className={styles.desc_value}>
-            <MdOutlineEmail /> mig@mitrasolusi.group
+            <MdOutlineEmail /> {profile.email}
           </p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>No.Telp</p>
           <p className={styles.desc_value}>
-            <TbPhone /> 021-111-345
+            <TbPhone /> {profile.no_telepon}
           </p>
         </div>
         <div className={styles.desc_box}>
           <p className={styles.desc_title}>Situs Web</p>
           <p className={styles.desc_value}>
-            <IoIosGlobe /> mitramas.com
+            <IoIosGlobe /> {profile.website}
           </p>
         </div>
       </div>

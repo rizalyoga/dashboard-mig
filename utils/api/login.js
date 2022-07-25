@@ -19,7 +19,7 @@ export const loginAccount = async (payload) => {
       const authentication = true;
 
       Cookies.set("userAuth", data.access_token, {
-        expires: exp,
+        expires: data.expires_in,
       });
 
       return authentication;

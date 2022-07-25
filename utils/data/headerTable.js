@@ -6,13 +6,13 @@ export const columns = [
   {
     id: "job_title",
     label: "Job",
-    minWidth: 170,
+    minWidth: 120,
     align: "center",
   },
   {
     id: "status",
     label: "Status",
-    minWidth: 150,
+    minWidth: 120,
     align: "center",
     format: (value) => (value == true ? "Active" : "Non Active"),
   },
