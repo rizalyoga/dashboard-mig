@@ -32,7 +32,7 @@ const LoginPage = () => {
 
     loginAccount(payload).then((res) => {
       if (res === true) {
-        router.push("/");
+        router.push("/company");
       } else {
         setError(`Error : ${res}`);
       }
