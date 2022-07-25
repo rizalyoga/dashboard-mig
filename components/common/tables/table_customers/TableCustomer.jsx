@@ -70,6 +70,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
             icon: res.success ? "success" : "error",
             text: `${res.message}`,
           });
+          router.push("/customers");
         });
       }
     });
@@ -94,8 +95,8 @@ const TableCustomer = ({ search, dataCustomers }) => {
           </TableHead>
           <TableBody>
             {dataCustomers
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .sort((a, b) => a.name.localeCompare(b.name))
+              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((customer, idx) => {
                 return (
                   <TableRow

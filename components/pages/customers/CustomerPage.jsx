@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 import Layout from "@/layout/Layout";
 import TableCustomer from "@/components/common/tables/table_customers/TableCustomer";
 
+// Icon
+import { HiUserAdd } from "react-icons/hi";
+
 const CustomerPage = ({ dataCustomers }) => {
   const [search, setSearch] = useState("");
   const [datasCustomer, setDatasCustomer] = useState(dataCustomers);
@@ -63,7 +66,10 @@ const CustomerPage = ({ dataCustomers }) => {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search by name"
                 />
-                <p onClick={toAddPage}>Tambah Customer</p>
+                <HiUserAdd
+                  onClick={toAddPage}
+                  className={styles.add_user_icon}
+                />
               </div>
               <div className={styles.tables__filter_feature}>
                 <select

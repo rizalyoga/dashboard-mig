@@ -17,16 +17,17 @@
           display: flex;
           align-items: center;
 
-          p {
+          .add_user_icon {
             background: #3fe929;
             cursor: pointer;
             color: #fff;
-            padding: 4px 4px;
+            padding: 0 10px;
             border-radius: 2px;
-            font-size: 0.8rem;
+            font-size: 2.3rem;
             text-align: center;
             margin: 0 4px;
             transition: 0.2s;
+            min-width: 50px;
 
             &:hover {
               background: green;
@@ -61,7 +62,15 @@
 
 @media (max-width: 945px) {
   .customers__container {
-    // for 430px
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .customers__container {
+    .add_user_icon {
+      padding: 6px 0 !important;
+      font-size: 2.35rem !important;
+    }
   }
 }

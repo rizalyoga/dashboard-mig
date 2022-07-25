@@ -21,6 +21,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
 
   const router = useRouter();
 
+  // Initialitation Data
   useEffect(() => {
     if (dataCustomer) {
       setName(dataCustomer.name);
@@ -54,7 +55,15 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
           icon: res.success ? "success" : "error",
           text: `${res.message}`,
         });
+
         setLoading((load) => !load);
+
+        setName("");
+        setPhone("");
+        setCountry("");
+        setAddress("");
+        setJob("");
+        setStatus(false);
       });
     } else {
       // edit customer

@@ -3,6 +3,7 @@ import styles from "./Layout.module.scss";
 import Head from "next/head";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import NProgress from "nprogress";
 
 // Component
 import Sidebar from "@/components/sidebar/Sidebar";
@@ -16,6 +17,25 @@ const Layout = ({ children }) => {
     if (!token) {
       router.push("/login");
     }
+  }, []);
+
+  useEffect(() => {
+    NProgress.configure({ showSpinner: false });
+    router.events.on("routeChangeStart", () => {
+      NProgress.start();
+    });
+
+    router.events.on("routeChangeComplete", () => {
+      NProgress.done();
+    });
+
+    router.events.on("routeChangeError", () => {
+      NProgress.done();
+    });
+
+    return () => {
+      NProgress.done();
+    };
   }, []);
 
   return (

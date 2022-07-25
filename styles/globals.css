@@ -29,3 +29,20 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+/* -------------------------------- nprogress ------------------------------- */
+#nprogress .bar {
+  background: #3fe929 !important;
+  height: 4px !important;
+
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #3fe929, 0 0 5px #3fe929 !important;
+}
