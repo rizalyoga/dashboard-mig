@@ -67,8 +67,8 @@ const CustomerPage = ({ dataCustomers }) => {
                   placeholder="Search by name"
                 />
                 <HiUserAdd
-                  onClick={toAddPage}
                   className={styles.add_user_icon}
+                  onClick={toAddPage}
                 />
               </div>
               <div className={styles.tables__filter_feature}>

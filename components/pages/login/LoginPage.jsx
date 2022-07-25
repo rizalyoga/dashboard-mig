@@ -16,7 +16,7 @@ const LoginPage = () => {
   useEffect(() => {
     const token = Cookies.get("userAuth");
     if (token) {
-      router.push("/");
+      router.push("/company");
     }
   }, []);
 

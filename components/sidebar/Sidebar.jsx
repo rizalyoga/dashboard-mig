@@ -66,8 +66,8 @@ const Sidebar = () => {
         <TbCheckupList className={styles.sidebar__icons} />
         <BiBox className={styles.sidebar__icons} />
         <TbBuildingSkyscraper
-          className={`${styles.sidebar__icons} ${checkActivePage("/")}`}
-          onClick={() => setDirection("/")}
+          className={`${styles.sidebar__icons} ${checkActivePage("/company")}`}
+          onClick={() => setDirection("/company")}
         />
       </div>
       <div className={styles.sidebar__user_menu_container}>

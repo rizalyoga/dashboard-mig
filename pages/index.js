@@ -1,6 +1,6 @@
 // Component
-import CompanyPage from "@/components/pages/company/CompanyPage";
+import Login from "./login";
 
 export default function Home() {
-  return <CompanyPage />;
+  return <Login />;
 }

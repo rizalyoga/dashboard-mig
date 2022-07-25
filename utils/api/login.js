@@ -15,11 +15,12 @@ export const loginAccount = async (payload) => {
 
     if (data.access_token) {
       const exp = new Date(new Date().getTime() + 60 * 60 * 24 * 1000); //1day / 24 jam
+      const oneHour = new Date(new Date().getTime() + 60 * 60 * 1000); // 1 jam
 
       const authentication = true;
 
       Cookies.set("userAuth", data.access_token, {
-        expires: data.expires_in,
+        expires: oneHour,
       });
 
       return authentication;
