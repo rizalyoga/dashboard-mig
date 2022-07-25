@@ -21,7 +21,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
 
   const router = useRouter();
 
-  // Initialitation Data
+  // Initialitation Data with data customer selected
   useEffect(() => {
     if (dataCustomer) {
       setName(dataCustomer.name);
@@ -33,7 +33,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
     }
   }, [dataCustomer]);
 
-  // Submit Handler
+  // Submit handler
   const onSubmit = (e) => {
     e.preventDefault();
     const token = Cookies.get("userAuth");
@@ -49,7 +49,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
     };
 
     if (router.route == "/customers/add") {
-      // add customer
+      // fetch api add customer
       addCustomer(data, token).then((res) => {
         Swal.fire({
           icon: res.success ? "success" : "error",
@@ -66,7 +66,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
         setStatus(false);
       });
     } else {
-      // edit customer
+      // fetch edit customer api
       const id = router.query;
 
       editCustomer(id, data, token).then((res) => {
@@ -79,7 +79,7 @@ const FormCustomer = ({ dataCustomer, title, titleBtn, loadingData }) => {
     }
   };
 
-  // Loading Data from parent
+  // Loading state from parent
   if (loadingData) {
     return <Loading />;
   }

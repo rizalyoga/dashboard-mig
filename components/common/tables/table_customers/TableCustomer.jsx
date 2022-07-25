@@ -24,7 +24,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
 
   const router = useRouter();
 
-  // Set table page & total-list
+  // Set table page & total-list when search function active
   useEffect(() => {
     if (search.length > 0) {
       setPage(0);
@@ -51,6 +51,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
 
   // Delete Customer
   const delCustomer = (id) => {
+    // Show sweetalert for confirmation
     Swal.fire({
       text: "Are you sure to Delete ?",
       color: "rgb(83,83,83)",
@@ -60,6 +61,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
       confirmButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
+        // fetch delete api for delete consumer data
         const token = Cookies.get("userAuth");
         const payload = {
           id: id,
@@ -95,7 +97,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
           </TableHead>
           <TableBody>
             {dataCustomers
-              .sort((a, b) => a.name.localeCompare(b.name))
+              ?.sort((a, b) => a.name.localeCompare(b.name))
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((customer, idx) => {
                 return (
@@ -147,7 +149,7 @@ const TableCustomer = ({ search, dataCustomers }) => {
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
-        count={dataCustomers.length}
+        count={dataCustomers?.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}

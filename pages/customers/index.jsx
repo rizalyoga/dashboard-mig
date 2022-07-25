@@ -12,17 +12,21 @@ export default Customers;
 export const getServerSideProps = async (context) => {
   const token = context.req.cookies.userAuth;
 
-  const config = {
-    headers: { Authorization: `${token}` },
-  };
+  if (token) {
+    const config = {
+      headers: { Authorization: `${token}` },
+    };
 
-  const response = await fetch(
-    "https://mitramas-test.herokuapp.com/customers",
-    config
-  );
+    const response = await fetch(
+      "https://mitramas-test.herokuapp.com/customers",
+      config
+    );
 
-  const dataCustomers = await response.json();
+    const dataCustomers = await response.json();
 
-  // Pass data to the page via props
-  return { props: dataCustomers };
+    // Pass data to the page via props
+    return { props: dataCustomers };
+  }
+
+  return { props: {} };
 };

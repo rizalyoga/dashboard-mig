@@ -33,7 +33,7 @@
 
     .sidebar__icons {
       width: 100%;
-      font-size: 30px;
+      font-size: 32px;
       cursor: pointer;
       color: rgb(116, 116, 116);
       transition: 0.2s;
@@ -48,6 +48,13 @@
 
   .sidebar__logout_container {
     margin-bottom: 80px;
+
+    .sidebar__icons {
+      &:hover {
+        color: red;
+        font-weight: bold;
+      }
+    }
   }
 }
 

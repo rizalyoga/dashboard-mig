@@ -46,7 +46,7 @@ const LoginPage = () => {
       <div className={styles.login__form_container}>
         <form onSubmit={onLogin}>
           <div className={styles.form_email}>
-            <label>Email : akun8@mig.id</label>
+            <label>Email</label>
             <input
               type="email"
               value={email}
@@ -56,7 +56,7 @@ const LoginPage = () => {
             />
           </div>
           <div className={styles.form_password}>
-            <label>Password : B71D0BDA</label>
+            <label>Password</label>
             <input
               type="password"
               value={password}

@@ -39,8 +39,7 @@ const Sidebar = () => {
       color: "rgb(83,83,83)",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#30d338",
-      cancelButtonColor: "#e61b47",
+      confirmButtonColor: "#7171FF",
       confirmButtonText: "Log out",
     }).then((result) => {
       if (result.isConfirmed) {
