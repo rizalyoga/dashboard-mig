@@ -1,7 +1,5 @@
 <div align="center">
 
-<h1>MIG Dashboard</h1>
-
 <!-- PROJECT LOGO -->
 
 <img src="public/asset/triangle.png" alt="Logo" width="250" height="auto" />
@@ -21,6 +19,20 @@ MIG Dashboard is the pre-test of the recruitment process for Front-End Developer
 ## Demo
 
 Here is a working live demo : https://migdashboard-rizalyoga.netlify.app
+
+## Site
+
+### Login Page
+
+<img src="public/asset/ss/login.png" alt="Logo" width="100%" height="auto" />
+
+### Dashboard Page
+
+<img src="public/asset/ss/dashboard.png" alt="Logo" width="100%" height="auto" />
+
+### Customers Page
+
+<img src="public/asset/ss/customers-table.png" alt="Logo" width="100%" height="auto" />
 
 ## Run in locale
 
