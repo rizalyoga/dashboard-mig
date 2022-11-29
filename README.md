@@ -22,6 +22,10 @@ Here is a working live demo : https://migdashboard-rizalyoga.netlify.app
 
 ## Video
 
+
+https://user-images.githubusercontent.com/28485636/204466081-385157b6-6622-4de2-b958-d77268528625.mp4
+
+
 ## Site
 
 ### Login Page
