@@ -20,6 +20,8 @@ MIG Dashboard is the pre-test of the recruitment process for Front-End Developer
 
 Here is a working live demo : https://migdashboard-rizalyoga.netlify.app
 
+## Video
+
 ## Site
 
 ### Login Page
@@ -33,6 +35,16 @@ Here is a working live demo : https://migdashboard-rizalyoga.netlify.app
 ### Customers Page
 
 <img src="public/asset/ss/customers-table.png" alt="Logo" width="100%" height="auto" />
+
+## Features
+
+- Sign in and sign out account.
+- See all the list of customer.
+- Create new customer.
+- Edit customer data.
+- Delete customer data.
+- Search customer data by name.
+- filter list customer by active or non active status
 
 ## Run in locale
 
